@@ -44,7 +44,7 @@ class WelcomeScreen extends StatelessWidget {
                       textStyle: const TextStyle(fontSize: 20),
                     ),
                     onPressed: () {},
-                      child: const Text('Create a account')
+                      child: const Text('Create a account on the charts')
               ),
                 ),
                 ),
