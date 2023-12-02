@@ -13,13 +13,15 @@ class FirstTitle extends StatelessWidget {
     return Text(
       title,
       style: const TextStyle(
-        fontSize: 35,
+        fontSize: 20,
         decoration: TextDecoration.none,
-        color: Colors.black,
+        color: Colors.blue,
       ),
     );
   }
 }
+
+
 class Caption extends StatelessWidget {
   final String title;
 

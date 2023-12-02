@@ -1,68 +1,71 @@
+import 'package:chat/ui/pages/authentication/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chat/ui/theme/fonts/fonts.dart';
+
+import '../login/login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    var screenSize = MediaQuery.of(context).size;
-
-    return  Padding(
-      padding:  EdgeInsets.only(
-        top: screenSize.height * 0.1,
-      ),
+    return Padding(
+      padding: const EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const FirstTitle("Welcome to charts"),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: screenSize.height * 0.6,
-                width: screenSize.width *0.9,
-                child: const Image(
-                  image: AssetImage (
-                    "assets/images/onboarding.jpg"
-                  ),
-                ),
-              ),
-            ),
+          const Image(
+            image: AssetImage("assets/images/welcome.jpg"),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
-                  width: 200,
-                  height: 50,
+                  width: 350,
+                  height: 40,
                   child: ElevatedButton(
-                    style: TextButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.all(16.0),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignupScreen()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 20),
+                      backgroundColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
                     ),
-                    onPressed: () {},
-                      child: const Text('Create a account on the charts')
+                    child: const Text("Sign Up"),
+                  ),
+                ),
               ),
-                ),
-                ),
             ],
           ),
-           Padding(
+          Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
-              width: 200,
-              height: 50,
+              width: 350,
+              height: 40,
               child: ElevatedButton(
-                style: TextButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.all(16.0),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>  LoginScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
                   textStyle: const TextStyle(fontSize: 20),
+                  backgroundColor: Colors.blue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50.0),
+                  ),
                 ),
-                onPressed: () {},
-                  child: const Text('Login')
+                child: const Text("Login"),
               ),
             ),
           ),
@@ -71,5 +74,3 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
-
-

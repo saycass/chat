@@ -1,4 +1,7 @@
+import 'package:chat/ui/pages/authentication/login/login_screen.dart';
+import 'package:chat/ui/pages/authentication/signup/signup_screen.dart';
 import 'package:chat/ui/pages/authentication/welcome/welcome_screen.dart';
+import 'package:chat/ui/pages/chat/messages/chat_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:chat/firebase_options.dart';
@@ -43,6 +46,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        iconTheme: const IconThemeData (
+          color: Colors.blue
+        )
       ),
       home: const WelcomeScreen()
     );
